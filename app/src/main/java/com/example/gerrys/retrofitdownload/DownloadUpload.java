@@ -128,7 +128,7 @@ public class DownloadUpload extends AppCompatActivity {
 
 
         FileDownloadClient uploadImage = retrofit.create(FileDownloadClient.class);
-        Call<UploadImageResponse> fileUpload = uploadImage.uploadFile(fileToUpload);
+        Call<UploadImageResponse> fileUpload = uploadImage.uploads("409","imageIdentityCard",fileToUpload);
         fileUpload.enqueue(new Callback<UploadImageResponse>() {
             @Override
             public void onResponse(Call<UploadImageResponse> call, Response<UploadImageResponse> response) {
