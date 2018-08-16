@@ -114,8 +114,8 @@ public class DownloadUpload extends AppCompatActivity {
                 return chain.proceed(newRequest.build()) ;
             }
         });
-        RequestBody mFile = RequestBody.create(MediaType.parse("image/*"),files);
-        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file",files.getName(),mFile);
+        RequestBody mFile = RequestBody.create(MediaType.parse("image/*"),file);
+        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file",file.getName(),mFile);
         RequestBody descriptionPart = RequestBody.create(MultipartBody.FORM,name.getText().toString());
         Gson gson = new GsonBuilder()
                 .setLenient()
